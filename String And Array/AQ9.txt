@@ -1,0 +1,39 @@
+9      WAP to remove the String which is not palindrome string from the array of String.
+
+import java.io.*;
+import java.util.*; 
+class GFG {
+    public static void isPalindrome(String[] str1, int length)
+    {
+         ArrayList<String> arrli 
+            = new ArrayList<String>();
+       for(int z=0;z<length; z++){
+           String str = str1[z];
+        str = str.toLowerCase();
+        String rev = "";
+         
+        for (int i = str.length() - 1; i >= 0; i--) {
+        rev = rev + str.charAt(i);
+                                                    }
+ 
+        if (str.equals(rev)) {
+        arrli.add(str1[z]);
+                             }
+        
+                                  }
+      str1 = new String[arrli.size()];
+      for(int i=0;i<arrli.size();i++)
+      str1[i]= arrli.get(i);
+       System.out.println(Arrays.toString(str1)); 
+    }
+    public static void main(String[] args)
+    {
+        
+        String[] str ={ "geeks","aba","abcdcba","rohit","rkr"};
+        int len = str.length;
+        
+        
+        isPalindrome(str,len);
+        
+    }
+}

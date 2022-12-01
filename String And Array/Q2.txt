@@ -1,0 +1,66 @@
+2   WAP to print the all alphabets of string in ascending and descending order.
+
+import java.io.*;
+import java.util.Arrays;
+ 
+
+public class A {
+ 
+    
+    public static void main(String[] args) throws Exception
+    {
+        
+        String str = "geeksforgeeks";
+       
+        
+        char arr[] = str.toCharArray();
+        descOrder(arr);
+        System.out.println(" ");
+        ascOrder(arr);
+ 
+    }
+   public static void descOrder(char[] arr){
+        char temp;
+ 
+        int i = 0;
+        while (i < arr.length) {
+            int j = i + 1;
+            while (j < arr.length) {
+                if (arr[j] > arr[i]) {
+                   
+                    
+                    temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+                j += 1;
+            }
+            i += 1;
+        }
+
+        System.out.println(arr);
+   }
+   
+   public static void ascOrder(char[] arr){
+        char temp;
+ 
+        int i = 0;
+        while (i < arr.length) {
+            int j = i + 1;
+            while (j < arr.length) {
+                if (arr[j] < arr[i]) {
+                   
+                    
+                    temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+                j += 1;
+            }
+            i += 1;
+        }
+        
+        System.out.println(arr);
+   }
+    
+}
